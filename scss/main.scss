@@ -29,6 +29,11 @@ p {
 
 a {
   color: $link-color;
+
+  &:hover{
+    color: darken($link-color, 15%);
+
+  }
 }
 
 .warning-button{
@@ -55,6 +60,14 @@ a {
 
     a {
       color: $menu-item-color;
+      padding: 5px 8px;
+      border-bottom: 1px solid transparentize(#fefefe, 0.5);
+      transition: border-bottom 1s;
+      transition-timing-function: ease-in-out;
+
+      &:hover{
+        border-bottom: 1px solid opacify(#fefefe, .5);
+      }
     }
 
   }
