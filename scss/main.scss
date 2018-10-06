@@ -2,6 +2,27 @@
 @import "partials/mixins";
 @import "partials/functions";
 
+@for $i from 1 through 6 {
+  .col-#{$i}{
+    width: $i * 2em;
+  }
+}
+
+//Each loops! 
+// $speakers: bob-banker, patty-plume, sandra-smith;
+// @each $speaker in $speakers {
+//   .#{speaker}-profile {
+//     background-image: url('/img/#{$speaker}.png');
+//   }
+// }
+
+$font-sizes: (tiny: 8px, small: 11px, medium: 13px, large: 18px);
+@each $name, $size in $font-sizes{
+  .#{name}{
+    font-size: $size;
+  }
+}
+
 @include google-font("Alegreya+Sans");
 @include google-font("Titillium+Web");
 
@@ -51,7 +72,9 @@ p {
 
 a {
   color: $link-color;
-
+  @include blue-beans{
+    color: #8779ff;
+  }
   &:hover {
     color: darken($link-color, 15%);
   }
@@ -151,4 +174,9 @@ a {
   clear: both;
   height: $footer-height;
   background-color: $ternary-color;
+
+  @include rogers-rover {
+    border-top: 5px solid darken($ternary-color, 15%);
+  }
 }
+
